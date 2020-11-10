@@ -12,7 +12,7 @@
                       src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
                       style="width:100%; min-height:150px;"></label></div>
                 <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="工程師" value="工程師"
-                    {{#if eng}}checked{{/if}}>
+                    {{#ifEquals job '工程師'}}checked{{/ifEquals}}>
                   <label class="form-check-label" for="工程師">工程師</label></div>
               </div>
             </div>
@@ -24,7 +24,7 @@
                       src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
                       style="width:100%; max-height:150px;"></label></div>
                 <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="設計師" value="設計師"
-                    {{#if des}}checked{{/if}}>
+                    {{#ifEquals job '設計師'}}checked{{/ifEquals}}>
                   <label class="form-check-label" for="設計師">設計師</label></div>
               </div>
             </div>
@@ -36,7 +36,7 @@
                       src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
                       style="width:100%; max-height:150px;"></label></div>
                 <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="創業家" value="創業家"
-                    {{#if ent}}checked{{/if}}>
+                    {{#ifEquals job '創業家'}}checked{{/ifEquals}}>
                   <label class="form-check-label" for="創業家">創業家</label></div>
               </div>
             </div>
