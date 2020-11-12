@@ -4,6 +4,7 @@ const task = {
   entrepreneur: ['週末加班', '要能賺錢', '想個 business model', '找 VC 募錢']
 
 }
+
 const phrase = ['很簡單', '很容易', '很快', '很正常']
 
 function sample(array) {
@@ -12,23 +13,14 @@ function sample(array) {
 }
 
 function generateTrashTalk(job) {
-  if (!job) return '請選擇一個職業。'
+  if (!job) return '請選擇一個職業 ^_^'
 
   let sentence = ''
 
-  sentence += `身為${job}，`
+  if (job === 'engineer') sentence = `身為工程師，${sample(task.engineer)}，${sample(phrase)}吧 ^_^`
+  if (job === 'designer') sentence = `身為設計師，${sample(task.designer)}，${sample(phrase)}吧 ^_^`
+  if (job === 'entrepreneur') sentence = `身為創業家，${sample(task.entrepreneur)}，${sample(phrase)}吧 ^_^`
 
-  if (job === '工程師') {
-    sentence += `${sample(task.engineer)}，`
-  }
-  if (job === '設計師') {
-    sentence += `${sample(task.designer)}，`
-  }
-  if (job === '創業家') {
-    sentence += `${sample(task.entrepreneur)}，`
-  }
-
-  sentence += `${sample(phrase)}吧！`
   return sentence
 }
 

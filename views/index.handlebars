@@ -1,55 +1,62 @@
 <div class="container py-5">
-
   <div class="row">
-    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
-      <h5 class="card-title text-center mb-3">你想對誰說幹話？</h5>
-      <form method="POST" action="/">
-        <div class="row text-center mb-3">
-          <div class="col-4">
-            <div class="form-check form-check-inline">
-              <div class="d-flex flex-column">
-                <div class="upper-part"><label class="form-check-label" for="工程師"><img
-                      src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
-                      style="width:100%; min-height:150px;"></label></div>
-                <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="工程師" value="工程師"
-                    {{#ifEquals job '工程師'}}checked{{/ifEquals}}>
-                  <label class="form-check-label" for="工程師">工程師</label></div>
+    <div class="col-12">
+      <h2 class="text-center mb-3">想聽誰說幹話？</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form action="/" method="POST">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <label for="engineer">
+                <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+                  style="width: 100%; height: 25vh;">
+              </label>
+              <div class="card-foot text-center">
+                <input type="radio" id="engineer" name="job" value="engineer"
+                  {{#ifEquals job 'engineer'}}checked{{/ifEquals}}>
+                <span>工程師</span>
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="form-check form-check-inline">
-              <div class="d-flex flex-column">
-                <div class="upper-part"><label class="form-check-label" for="設計師"><img
-                      src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
-                      style="width:100%; max-height:150px;"></label></div>
-                <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="設計師" value="設計師"
-                    {{#ifEquals job '設計師'}}checked{{/ifEquals}}>
-                  <label class="form-check-label" for="設計師">設計師</label></div>
+          <div class="card">
+            <div class="card-body">
+              <label for="designer">
+                <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+                  style="width: 100%; height: 25vh;">
+              </label>
+              <div class="card-foot text-center">
+                <input type="radio" id="designer" name="job" value="designer"
+                  {{#ifEquals job 'designer'}}checked{{/ifEquals}}>
+                <span>設計師</span>
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="form-check form-check-inline">
-              <div class="d-flex flex-column">
-                <div class="upper-part"><label class="form-check-label" for="創業家"><img
-                      src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
-                      style="width:100%; max-height:150px;"></label></div>
-                <div class="lower-part"><input class="form-check-input" type="radio" name="job" id="創業家" value="創業家"
-                    {{#ifEquals job '創業家'}}checked{{/ifEquals}}>
-                  <label class="form-check-label" for="創業家">創業家</label></div>
+          <div class="card">
+            <div class="card-body">
+              <label for="entrepreneur">
+                <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+                  style="width: 100%; height: 25vh;">
+              </label>
+              <div class="card-foot text-center">
+                <input type="radio" id="entrepreneur" name="job" value="entrepreneur"
+                  {{#ifEquals job 'entrepreneur'}}checked{{/ifEquals}}>
+                <span>創業家</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="row px-3">
-          <div class="col-2"><button class="btn btn-dark" type="submit" style="width: 100px;">產生幹話</button></div>
-          <div class="col-10">
+        <div class="row mt-3">
+          <div class="col-1"><button type="submit" class="btn btn-outline-dark" style="width: 90px">產生幹話</button>
+          </div>
+          <div class="col-11">
             <p class="border border-dark" style="min-height: 100px;">{{sentence}}</p>
           </div>
         </div>
-
       </form>
     </div>
+
   </div>
 </div>

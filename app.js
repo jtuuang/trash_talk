@@ -1,15 +1,15 @@
 const express = require('express')
-const app = express()
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const generateTrashTalk = require('./generate_trash_talk')
-const port = 3000
+
+const app = express()
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
-    ifEquals(job, selectedJob, options) {
-      return (job == selectedJob) ? options.fn(this) : options.inverse(this)
+    ifEquals(selectedJob, jobName, options) {
+      return (selectedJob === jobName) ? options.fn(this) : options.inverse(this)
     }
   }
 }))
@@ -23,9 +23,10 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const job = req.body.job
-  res.render('index', { sentence: generateTrashTalk(job), job })
+  const sentence = generateTrashTalk(job)
+  res.render('index', { sentence, job })
 })
 
-app.listen(port, () => {
-  console.log(`The Express is running on http://localhost:${port}`)
+app.listen(3000, () => {
+  console.log('The server is running on http://localhost:3000')
 })
